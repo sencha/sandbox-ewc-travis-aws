@@ -35,7 +35,6 @@ module.exports = function(env) {
                 toolkit: 'modern',
                 theme: 'theme-material',
                 emit: emit,
-                script: './extract-code.js',
                 port: port,
                 packages: [],
                 profile: profile,

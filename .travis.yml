@@ -7,11 +7,11 @@ cache:
 
 before_install:
   # NPM Login - commercial
-  # - npm config set @sencha:registry https://npm.sencha.com/
-  # - npm config set //npm.sencha.com/:_authToken=$SENCHA_NPM_TOKEN_VERDACCIO
+  - npm config set @sencha:registry https://npm.sencha.com/
+  - npm config set //npm.sencha.com/:_authToken=$SENCHA_NPM_TOKEN_VERDACCIO
   # NPM Login - early-adopter
-  - npm config set @sencha:registry https://sencha.myget.org/F/early-adopter/npm/
-  - npm config set //sencha.myget.org/F/early-adopter/npm/:_authToken=$SENCHA_NPM_TOKEN_EARLYADOPTER
+  # - npm config set @sencha:registry https://sencha.myget.org/F/early-adopter/npm/
+  # - npm config set //sencha.myget.org/F/early-adopter/npm/:_authToken=$SENCHA_NPM_TOKEN_EARLYADOPTER
   # For early adopter clean the cache 
   # Remove all package-lock.json files for early adopter. 
   #- npm cache clean --force
@@ -34,7 +34,7 @@ before_deploy:
   - cd ..
   - pwd
   # Copy the web app into the server static html directory
-  - cp -R ./client/build/production/ModernApp/* ./server/html
+  - cp -R ./client/build/* ./server/html
   # Get rid of the files that aren't needed in the deployment
   - rm -rf ./client
   # Add the server libraries
